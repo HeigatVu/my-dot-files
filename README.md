@@ -12,8 +12,16 @@ cp ./.zshrc ~/
 ```
 
 ## Install nerd font
-
-
+# Clone repo
+```
+git clone https://github.com/ryanoasis/nerd-fonts.git
+````
+Then,
+```
+cd nerd-fonts
+./install.sh <FONT-NAME>
+```
+*NOTE: I often use FiraCode, JetBrainMono
 ## ZSH
 ### Install ZSH.
 
@@ -70,16 +78,19 @@ git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZS
 git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
 ```
 
-## References
+## TMUX
+
+## NVIM
+
+
+# Keymap
+
+# References
 
  - [Oh my ZSH](https://github.com/ohmyzsh/ohmyzsh)
  - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
  - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
  - [zsh-fast-syntax-highlighting](https://github.com/zdharma/fast-syntax-highlighting)
  - [zsh-autocomplete](https://github.com/marlonrichert/zsh-autocomplete)
-## TMUX
-
-## NVIM
-
-
-# My keymap
+ - [Nerd-font]{https://www.nerdfonts.com/}
+ - [Installing nerd-font]{https://github.com/ryanoasis/nerd-fonts}
