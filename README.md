@@ -93,7 +93,8 @@ tmux source ~/.tmux.conf
 
 **INSTALLING PLUGINS:**
 1. Add new plugin to `~/.tmux.conf` with `set -g @plugins '...'`
-2. Press `prefix` + `I` (capital I, as in Install) to fetch the plugin
+2. Press **`prefix` + `I`** (capital I, as in Install) to fetch the plugin
+
 *NOTE: I am set `prefix` being `ctrl` + `a`
 
 ## NEOVIM
@@ -102,6 +103,16 @@ Enter `nvim` in terminal, it will install all plugins. You can config in `~/.con
 
 # Keymap
 ## TMUX
+
+- `Prefix`: `ctrl` + `a`
+- `prefix` + `\`: horizontal split
+- `prefix` + `-`: vertical split
+- `prefix` + `c`: create new window
+- `prefix` + `j, k, l, h`: resize split pane
+- `prefix` + `m`: maximize pane
+- `prefix` + `left, right, up, down`: navigate pane after spliting
+- `prefix` + `v`: select text for copy
+- `prefix` + `y` / `prefix` + `p`: copy and paster
 
 ## NEOVIM
 
