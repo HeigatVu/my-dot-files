@@ -5,6 +5,12 @@
 sudo apt install zsh-autosuggestions zsh-syntax-highlighting zsh
 ```
 
+### Set Zsh as default
+
+'''
+chsh -s $(which zsh)
+'''
+
 ### Install Oh my ZSH.
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
