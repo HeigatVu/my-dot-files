@@ -92,5 +92,5 @@ git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZS
  - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
  - [zsh-fast-syntax-highlighting](https://github.com/zdharma/fast-syntax-highlighting)
  - [zsh-autocomplete](https://github.com/marlonrichert/zsh-autocomplete)
- - [Nerd-font]{https://www.nerdfonts.com/}
- - [Installing nerd-font]{https://github.com/ryanoasis/nerd-fonts}
+ - [Nerd-font](https://www.nerdfonts.com/)
+ - [Installing nerd-font](https://github.com/ryanoasis/nerd-fonts)
