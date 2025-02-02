@@ -21,7 +21,9 @@ Then,
 cd nerd-fonts
 ./install.sh <FONT-NAME>
 ```
+
 *NOTE: I often use FiraCode, JetBrainMono
+
 ## ZSH
 ### Install ZSH.
 
@@ -96,6 +98,7 @@ tmux source ~/.tmux.conf
 
 ## NEOVIM
 
+Press in terminal, it will install all plugins `nvim`. You can config based on [`plugins lazy vim`](https://www.lazyvim.org/plugins)
 
 # Keymap
 ## TMUX
@@ -113,3 +116,4 @@ tmux source ~/.tmux.conf
  - [Nerd-font](https://www.nerdfonts.com/)
  - [Installing nerd-font](https://github.com/ryanoasis/nerd-fonts)
  - [Tmux plugin manger](https://github.com/tmux-plugins/tpm?tab=readme-ov-file)
+ - [Lazy vim](https://www.lazyvim.org/)
