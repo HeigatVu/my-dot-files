@@ -1,19 +1,16 @@
 # All my config TMUX neovim and ZSH
 ## ZSH
-# Oh my zsh.
-<p align="center"><img src="https://s3.amazonaws.com/ohmyzsh/oh-my-zsh-logo.png" alt="Oh My Zsh"></p>
-
-## Install ZSH.
+### Install ZSH.
 ```
 sudo apt install zsh-autosuggestions zsh-syntax-highlighting zsh
 ```
 
-## Install Oh my ZSH.
+### Install Oh my ZSH.
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-## Install plugins.
+### Install plugins.
  - autosuggesions plugin
  
 	`git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions`
@@ -30,7 +27,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 	
 	`git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete`
 	
-## Enable plugins by adding them to .zshrc.
+### Enable plugins by adding them to .zshrc.
  - Open .zshrc
 	
 	`nvim ~/.zshrc`
