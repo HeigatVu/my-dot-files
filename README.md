@@ -98,7 +98,7 @@ tmux source ~/.tmux.conf
 
 ## NEOVIM
 
-Press in terminal, it will install all plugins `nvim`. You can config based on [`plugins lazy vim`](https://www.lazyvim.org/plugins)
+Press in terminal, it will install all plugins `nvim`. You can config in `~/.config/nvim/lua/plugins` based on [`plugins lazy vim`](https://www.lazyvim.org/plugins)
 
 # Keymap
 ## TMUX
