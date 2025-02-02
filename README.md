@@ -47,7 +47,7 @@ Clone and move to oh my zsh themes dir
 ```
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 ```
-Then, In terminal, we run this line
+Then, In terminal, we run this line to config
 
 ```
 p10k configure
@@ -79,6 +79,7 @@ git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZS
 ```
 
 ## TMUX
+### Install *Tmux Plugin Manager*
 
 ## NVIM
 
