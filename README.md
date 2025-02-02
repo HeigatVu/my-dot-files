@@ -2,7 +2,7 @@
 ## Clone repo:
 
 ```
-
+git clone git@github.com:HeigatVu/my-dot-files.git
 ```
 
 ## Install nerd font
