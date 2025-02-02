@@ -1,6 +1,16 @@
 # All my config TMUX neovim and ZSH
+## Clone repo:
+
+```
+
+```
+
+## Install nerd font
+
+
 ## ZSH
 ### Install ZSH.
+
 ```
 sudo apt install zsh-autosuggestions zsh-syntax-highlighting zsh
 ```
@@ -10,10 +20,23 @@ sudo apt install zsh-autosuggestions zsh-syntax-highlighting zsh
 ```
 chsh -s $(which zsh)
 ```
+	
 
 ### Install Oh my ZSH.
+
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+### Install power
+
+```
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+```
+Then, In terminal, we run this line
+
+```
+p10k configure
 ```
 
 ### Install plugins.
@@ -32,16 +55,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
  - zsh-autocomplete plugin
 	
 	`git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete`
-	
-### Enable plugins by adding them to .zshrc.
- - Open .zshrc
-	
-	`nvim ~/.zshrc`
-	
- -  Find the line which says `plugins=(git)`.
-	
- -  Replace that line with
-	`plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete)`
 	
 ## References
 
