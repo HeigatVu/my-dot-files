@@ -79,7 +79,20 @@ git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZS
 ```
 
 ## TMUX
-### Install *Tmux Plugin Manager*
+### Install **Tmux Plugin Manager**
+Clone repo
+```
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+Then, we reload tmux
+```
+tmux source ~/.tmux.conf
+```
+
+**INSTALLING PLUGINS:**
+1. Add new plugin to `~/.tmux.conf` with `set -g @plugins '...'`
+2. Press `prefix` + `I` (capital I, as in Install) to fetch the plugin
+*NOTE: I am set `prefix` being `ctrl` + `a`
 
 ## NVIM
 
@@ -95,3 +108,4 @@ git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZS
  - [zsh-autocomplete](https://github.com/marlonrichert/zsh-autocomplete)
  - [Nerd-font](https://www.nerdfonts.com/)
  - [Installing nerd-font](https://github.com/ryanoasis/nerd-fonts)
+ - [Tmux plugin manger](https://github.com/tmux-plugins/tpm?tab=readme-ov-file)
