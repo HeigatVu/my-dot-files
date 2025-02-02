@@ -116,6 +116,8 @@ Enter `nvim` in terminal, it will install all plugins. You can config in `~/.con
 
 ## NEOVIM
 
+- You can use keymap in `~/.config/nvim/lua/config/keymaps.lua`
+- I am using tabnine for suggesting code but you can config other AI such copilot,... by inputting `:LazyEtras`
 
 # References
 
