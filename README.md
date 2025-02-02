@@ -4,6 +4,12 @@
 ```
 git clone git@github.com:HeigatVu/my-dot-files.git
 ```
+Then,
+```
+cp -r ./nvim ~/.config/
+cp ./.tmux.conf ~/
+cp ./.zshrc ~/
+```
 
 ## Install nerd font
 
