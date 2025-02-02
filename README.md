@@ -12,7 +12,7 @@ cp ./.zshrc ~/
 ```
 
 ## Install nerd font
-# Clone repo
+Clone repo
 ```
 git clone https://github.com/ryanoasis/nerd-fonts.git
 ````
@@ -43,7 +43,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ```
 
 ### Install powerlevel10k
-
+Clone and move to oh my zsh themes dir
 ```
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 ```
