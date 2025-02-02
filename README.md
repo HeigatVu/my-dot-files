@@ -94,13 +94,13 @@ tmux source ~/.tmux.conf
 2. Press `prefix` + `I` (capital I, as in Install) to fetch the plugin
 *NOTE: I am set `prefix` being `ctrl` + `a`
 
-## NEO VIM
+## NEOVIM
 
 
 # Keymap
 ## TMUX
 
-## NEO VIM
+## NEOVIM
 
 
 # References
