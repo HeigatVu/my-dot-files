@@ -7,16 +7,24 @@
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 
--- Turn off paste mode when leaving insert
-vim.api.nvim_create_autocmd("InsertLeave", {
-  pattern = "*",
-  command = "set nopaste",
+-- Autocmds
+
+local function save()
+  local buf = vim.api.nvim_get_current_buf()
+
+  vim.api.nvim_buf_call(buf, function()
+    vim.cmd("silent! write")
+  end)
+end
+
+vim.api.nvim_create_augroup("AutoSave", {
+  clear = true,
 })
--- Fix conceallevel for json files
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "json", "jsonc" },
+
+vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
   callback = function()
-    vim.wo.spell = false
-    vim.wo.conceallevel = 0
+    save()
   end,
+  pattern = "*",
+  group = "AutoSave",
 })
