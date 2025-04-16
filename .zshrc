@@ -120,6 +120,7 @@ alias help=tldr
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -139,3 +140,158 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 export GOPATH=$HOME/go
+
+
+
+
+# Config fzf
+# Use ~~ as the trigger sequence instead of the default **
+export FZF_COMPLETION_TRIGGER='``'
+
+# Options to fzf command
+export FZF_COMPLETION_OPTS='--border --info=inline'
+
+# Options for path completion (e.g. vim **<TAB>)
+export FZF_COMPLETION_PATH_OPTS='--walker file,dir,follow,hidden'
+
+# Options for directory completion (e.g. cd **<TAB>)
+export FZF_COMPLETION_DIR_OPTS='--walker dir,follow'
+
+# Advanced customization of fzf options via _fzf_comprun function
+# - The first argument to the function is the name of the command.
+# - You should make sure to pass the rest of the arguments ($@) to fzf.
+_fzf_comprun() {
+  local command=$1
+  shift
+
+  case "$command" in
+    cd)           fzf --style full \
+                      --height=50% \
+                      --margin=5%,2%,2%,5% \
+                      --info=inline \
+                      --border=double \
+                      --pointer='→' \
+                      --marker='♡' \
+                      --border-label ' DIRECTORY ' \
+                      --input-label ' Input ' \
+                      --bind 'result:transform-list-label:
+                          if [[ -z $FZF_QUERY ]]; then
+                            echo \" $FZF_MATCH_COUNT items \"
+                          else
+                            echo \" $FZF_MATCH_COUNT matches for [$FZF_QUERY] \"
+                          fi
+                          ' \
+                      --bind 'focus:transform-preview-label:[[ -n {} ]] && printf \" Previewing [%s] \" {}' \
+                      --bind 'focus:+transform-header:file --brief {} || echo \"No file selected\"' \
+                      --bind 'ctrl-r:change-list-label( Reloading the list )+reload(sleep 2; git ls-files)' \
+                      --color 'border:#aaaaaa,label:#cccccc' \
+                      --color 'preview-border:#9999cc,preview-label:#ccccff' \
+                      --color 'list-border:#669966,list-label:#99cc99' \
+                      --color 'input-border:#996666,input-label:#ffcccc' \
+                      --preview 'tree -C {} | head -200'   "$@" ;;
+    export|unset) fzf --preview "eval 'echo \$'{}"         "$@" ;;
+    ssh)          fzf --preview 'dig {}'                   "$@" ;;
+    *)            fzf --style full \
+                      --height=50% \
+                      --margin=5%,2%,2%,5% \
+                      --info=inline \
+                      --border=double \
+                      --pointer='→' \
+                      --marker='♡' \
+                      --border-label ' FILE ' \
+                      --input-label ' Input ' \
+                      --header-label ' File Type ' \
+                      --bind 'result:transform-list-label:
+                          if [[ -z $FZF_QUERY ]]; then
+                            echo \" $FZF_MATCH_COUNT items \"
+                          else
+                            echo \" $FZF_MATCH_COUNT matches for [$FZF_QUERY] \"
+                          fi
+                          ' \
+                      --bind 'focus:transform-preview-label:[[ -n {} ]] && printf \" Previewing [%s] \" {}' \
+                      --bind 'focus:+transform-header:file --brief {} || echo \"No file selected\"' \
+                      --bind 'ctrl-r:change-list-label( Reloading the list )+reload(sleep 2; git ls-files)' \
+                      --color 'border:#aaaaaa,label:#cccccc' \
+                      --color 'preview-border:#9999cc,preview-label:#ccccff' \
+                      --color 'list-border:#669966,list-label:#99cc99' \
+                      --color 'input-border:#996666,input-label:#ffcccc' \
+                      --color 'header-border:#6699cc,header-label:#99ccff' \
+                      --preview 'bat -n --color=always {}' "$@" ;;
+  esac
+}
+
+# Config ctrl R in fzf
+export FZF_CTRL_R_OPTS="
+  --style full
+  --border=double
+  --color 'border:#aaaaaa,label:#cccccc'
+  --color 'list-border:#669966,list-label:#99cc99'
+  --height=50%
+  --margin=5%,2%,2%,5%
+  --border-label ' COMMAND '
+  --input-label ' Input '
+  --color 'input-border:#996666,input-label:#ffcccc'
+  --layout=reverse
+  --info=inline
+  --pointer='→'
+  --marker='♡'
+  --color header:italic"
+
+# Config ctrl T in fzf
+export FZF_CTRL_T_OPTS="
+  --style full
+  --height=50%
+  --margin=5%,2%,2%,5%
+  --info=inline
+  --border=double
+  --pointer='→'
+  --marker='♡'
+  --border-label ' FILE ' 
+  --input-label ' Input ' 
+  --header-label ' File Type '
+  --walker-skip .git,node_modules,target
+  --preview 'bat -n --color=always {}'
+  --bind 'result:transform-list-label:
+      if [[ -z $FZF_QUERY ]]; then
+        echo \" $FZF_MATCH_COUNT items \"
+      else
+        echo \" $FZF_MATCH_COUNT matches for [$FZF_QUERY] \"
+      fi
+      '
+  --bind 'focus:transform-preview-label:[[ -n {} ]] && printf \" Previewing [%s] \" {}'
+  --bind 'focus:+transform-header:file --brief {} || echo \"No file selected\"' \
+  --bind 'ctrl-r:change-list-label( Reloading the list )+reload(sleep 2; git ls-files)'
+  --color 'border:#aaaaaa,label:#cccccc'
+  --color 'preview-border:#9999cc,preview-label:#ccccff'
+  --color 'list-border:#669966,list-label:#99cc99'
+  --color 'input-border:#996666,input-label:#ffcccc'
+  --color 'header-border:#6699cc,header-label:#99ccff'"
+
+# Config alt c in fzf
+export FZF_ALT_C_OPTS="
+  --style full
+  --height=50%
+  --margin=5%,2%,2%,5%
+  --info=inline
+  --border=double
+  --pointer='→'
+  --marker='♡'
+  --walker-skip .git,node_modules,target
+  --preview 'tree -C {}'
+  --border-label ' DIRECTORY ' 
+  --input-label ' Input ' 
+  --walker-skip .git,node_modules,target
+  --bind 'result:transform-list-label:
+      if [[ -z $FZF_QUERY ]]; then
+        echo \" $FZF_MATCH_COUNT items \"
+      else
+        echo \" $FZF_MATCH_COUNT matches for [$FZF_QUERY] \"
+      fi
+      '
+  --bind 'focus:transform-preview-label:[[ -n {} ]] && printf \" Previewing [%s] \" {}'
+  --bind 'focus:+transform-header:file --brief {} || echo \"No file selected\"' \
+  --bind 'ctrl-r:change-list-label( Reloading the list )+reload(sleep 2; git ls-files)'
+  --color 'border:#aaaaaa,label:#cccccc'
+  --color 'preview-border:#9999cc,preview-label:#ccccff'
+  --color 'list-border:#669966,list-label:#99cc99'
+  --color 'input-border:#996666,input-label:#ffcccc'"
